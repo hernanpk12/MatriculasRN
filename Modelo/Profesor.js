@@ -5,7 +5,7 @@ export default class persona extends Component{
 
   constructor(props){
         super(props);
-        this.state ={id:'', nif:'',nombre:'',apellido1:'',apellido2:'',cuidad:'',direccion:'',telefono:'',fecha_nacimiento:'',sexo:'',tipo:'',clave:''};
+        this.state ={id_profesor:'', id_departamento:''};
 
     }
 
