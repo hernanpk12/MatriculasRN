@@ -23,18 +23,8 @@ export default class persona extends Component{
 
         body: JSON.stringify(
           {
-           persona_id:this.state.id,
-           persona_nif:this.state.nif,
-           persona_nombre:this.state.nombre,
-           persona_apellido1:this.state.apellido1,
-           persona_apellido2:this.state.apellido2,
-           persona_cuidad:this.state.cuidad,
-           persona_direccion:this.state.direccion,
-           persona_telefono:this.state.telefono,
-           persona_fecha_nacimiento:this.state.fecha_nacimiento,
-           persona_sexo:this.state.sexo,
-           persona_tipo:this.state.tipo,
-           persona_clave:this.state.clave
+           profesor_id:this.state.id_profesor,
+           departamento_id:this.state.id_departamento,
           }
         )
       }
@@ -54,7 +44,7 @@ export default class persona extends Component{
 
     }
     actualizarPersona = ()=>{
-      fetch('ttp://172.16.6.8:8090/ApiMatriculasGrupoSabado/Modelo/editarPersona.php',
+      fetch('ttp://172.16.6.8:8090/ApiMatriculasGrupoSabado/Modelo/editarProfesor.php',
       {
         method: 'PUT',
         headers: {
@@ -64,18 +54,8 @@ export default class persona extends Component{
         },
         body: JSON.stringify(
           {
-           persona_id:this.state.id,
-           persona_nif:this.state.nif,
-           persona_nombre:this.state.nombre,
-           persona_apellido1:this.state.apellido1,
-           persona_apellido2:this.state.apellido2,
-           persona_cuidad:this.state.cuidad,
-           persona_direccion:this.state.direccion,
-           persona_telefono:this.state.telefono,
-           persona_fecha_nacimiento:this.state.fecha_nacimiento,
-           persona_sexo:this.state.sexo,
-           persona_tipo:this.state.tipo,
-           persona_clave:this.state.clave
+            profesor_id:this.state.id_profesor,
+            departamento_id:this.state.id_departamento,
           }
         )
       }
@@ -94,7 +74,7 @@ export default class persona extends Component{
     }
     eliminarPersona = ()=>{
       
-      fetch('ttp://172.16.6.8:8090/ApiMatriculasGrupoSabado/Modelo/eliminarpersona.php',
+      fetch('ttp://172.16.6.8:8090/ApiMatriculasGrupoSabado/Modelo/eliminarProfesor.php',
       {
         method: 'DELETE',
         headers: {
@@ -104,7 +84,7 @@ export default class persona extends Component{
         },
         body: JSON.stringify(
           {
-          persona_id:this.state.id,
+            profesor_id:this.state.id_profesor,
           }
         )
       }
@@ -123,7 +103,7 @@ export default class persona extends Component{
       
     }
     listarPersona = ()=>{
-      fetch('ttp://172.16.6.8:8090/ApiMatriculasGrupoSabado/Modelo/ListarTodaslPersonas.php',
+      fetch('ttp://172.16.6.8:8090/ApiMatriculasGrupoSabado/Modelo/ListarTodosProfesores.php',
       {
         method: 'GET',
         headers: {
@@ -133,18 +113,8 @@ export default class persona extends Component{
         },
         body: JSON.stringify(
           {
-            persona_id:this.state.id,
-            persona_nif:this.state.nif,
-            persona_nombre:this.state.nombre,
-            persona_apellido1:this.state.apellido1,
-            persona_apellido2:this.state.apellido2,
-            persona_cuidad:this.state.cuidad,
-            persona_direccion:this.state.direccion,
-            persona_telefono:this.state.telefono,
-            persona_fecha_nacimiento:this.state.fecha_nacimiento,
-            persona_sexo:this.state.sexo,
-            persona_tipo:this.state.tipo,
-            persona_clave:this.state.clave
+            profesor_id:this.state.id_profesor,
+            departamento_id:this.state.id_departamento,
           }
         )
       }
@@ -153,18 +123,8 @@ export default class persona extends Component{
       .then((responseJson)=>
       {
             this.state({
-            id: responseJson[0]['id'],
-            nif: responseJson[0]['nif'] ,
-            nombre: responseJson[0]['nombre'],
-            apellido1: responseJson[0]['apellido1'],
-            apellido2: responseJson[0]['apellido2'],
-            cuidad: responseJson[0]['cuidad'],
-            direccion: responseJson[0]['direccion'],
-            telefono: responseJson[0]['telefono'],
-            fecha_nacimiento: responseJson[0]['fecha_nacimiento'],
-            sexo: responseJson[0]['sexo'],
-            tipo: responseJson[0]['tipo'],
-            clave: responseJson[0]['clave']
+            id_profesor: responseJson[0]['id_profesor'],
+            id_departamento: responseJson[0]['id_departamento'] 
             }
         )   
       }
@@ -173,7 +133,7 @@ export default class persona extends Component{
       
     }
     listarPersonaId = ()=>{
-      fetch('ttp://172.16.6.8:8090/ApiMatriculasGrupoSabado/Modelo/ListarPersonaid.php',
+      fetch('ttp://172.16.6.8:8090/ApiMatriculasGrupoSabado/Modelo/ListarProfesorid.php',
       {
         method: 'GET',
         headers: {
@@ -183,18 +143,8 @@ export default class persona extends Component{
         },
         body: JSON.stringify(
           {
-            persona_id:this.state.id,
-            persona_nif:this.state.nif,
-            persona_nombre:this.state.nombre,
-            persona_apellido1:this.state.apellido1,
-            persona_apellido2:this.state.apellido2,
-            persona_cuidad:this.state.cuidad,
-            persona_direccion:this.state.direccion,
-            persona_telefono:this.state.telefono,
-            persona_fecha_nacimiento:this.state.fecha_nacimiento,
-            persona_sexo:this.state.sexo,
-            persona_tipo:this.state.tipo,
-            persona_clave:this.state.clave
+           profesor_id:this.state.id_profesor,
+           departamento_id:this.state.id_departamento,
           }
         )
       }
@@ -203,17 +153,8 @@ export default class persona extends Component{
       .then((responseJson)=>
       {
             this.state({
-            nif: responseJson[0]['nif'] ,
-            nombre: responseJson[0]['nombre'],
-            apellido1: responseJson[0]['apellido1'],
-            apellido2: responseJson[0]['apellido2'],
-            cuidad: responseJson[0]['cuidad'],
-            direccion: responseJson[0]['direccion'],
-            telefono: responseJson[0]['telefono'],
-            fecha_nacimiento: responseJson[0]['fecha_nacimiento'],
-            sexo: responseJson[0]['sexo'],
-            tipo: responseJson[0]['tipo'],
-            clave: responseJson[0]['clave']
+              id_profesor: responseJson[0]['id_profesor'],
+              id_departamento: responseJson[0]['id_departamento'] 
             }
         )   
       }

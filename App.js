@@ -225,18 +225,26 @@ export default class persona extends Component{
     render() {     
             return (  
  
-           <View style = {MisEstilos.container}>
-                
+           <View style = {MisEstilos.Maincontainer}>
+              <Text style ={{fontSize:20, textAlign: 'center', marginBottom: 7}}>Registro de personas</Text>
+              <TextInput style = {MisEstilos.TextoInput} placeholder="Ingrese el id" onChangeText={id => this.setState({id:id})} underlineColorAndroid='transparent' value={this.state.id}> </TextInput>
+              <TextInput style = {MisEstilos.TextoInput} placeholder="Ingrese el nif" onChangeText={nif => this.setState({nif:nif})} underlineColorAndroid='transparent' value={this.state.nif}> </TextInput>    
+
+              <TouchableOpacity activeOpacity={0.4} style={MisEstilos.EstiloBoton} onPress={this.insertarPersona}> </TouchableOpacity>
+
+
            </View> 
         );
       }
 }
+
 const MisEstilos = StyleSheet.create({
-  container: {
+  Maincontainer: {
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 30,
   },
   TextoInput:{
     textAlign: 'center',
@@ -254,7 +262,7 @@ const MisEstilos = StyleSheet.create({
     paddingBottom: 10,
     borderRadius: 5,
     marginBottom: 7,
-    width: '50%',
+    width: '90%',
     backgroundColor: '#00BCD4' 
 
   },
@@ -263,4 +271,11 @@ const MisEstilos = StyleSheet.create({
     textAlign: 'center',
     fontSize: 16
   },
+  RowViewContainer:{
+    fontSize:20,
+    paddingRight:10,
+    paddingTop:10,
+    paddingLeft:10,
+    paddingBottom:10
+  }
 });
